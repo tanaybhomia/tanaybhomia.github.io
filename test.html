@@ -28,42 +28,43 @@
         const centerX = canvas.width / 2;
         const centerY = canvas.height / 2;
         let radius = 50;
-        let frame = 0;
+        let expanding = true;
 
         // Function to draw the rippling aura
         function drawAura() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             // Create a noisy background
-            for (let i = 0; i < 1000; i++) {
+            for (let i = 0; i < 3000; i++) { // Increase the number of grains for more noise
                 const x = Math.random() * canvas.width;
                 const y = Math.random() * canvas.height;
                 ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
                 ctx.fillRect(x, y, 1, 1);
             }
 
-            // Create a white ripple with reduced size
-            if (frame < 100) { // Adjust the frame limit to control ripple size
-                const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, radius);
-                gradient.addColorStop(0, 'rgba(255, 255, 255, 0.8)');
-                gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
-                ctx.fillStyle = gradient;
+            // Create a white ripple
+            const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, radius);
+            gradient.addColorStop(0, 'rgba(255, 255, 255, 0.8)');
+            gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+            ctx.fillStyle = gradient;
 
-                ctx.beginPath();
-                ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
-                ctx.fill();
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Increase or decrease the radius for the ripple effect (slowly)
+            if (expanding) {
+                radius += 0.2; // Adjust the rate of expansion for smoothness
+            } else {
+                radius -= 0.2; // Adjust the rate of contraction for smoothness
             }
 
-            // Increase the radius for the ripple effect
-            radius += 1;
-
-            // Reset the radius and frame count when it reaches a certain size
-            if (radius > 500) {
-                radius = 50;
-                frame = 0;
+            // Reverse the expansion direction when it reaches a certain size
+            if (radius > 200) {
+                expanding = false;
+            } else if (radius < 50) {
+                expanding = true;
             }
-
-            frame++;
 
             // Request the next frame
             requestAnimationFrame(drawAura);
