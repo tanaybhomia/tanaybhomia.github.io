@@ -1,0 +1,136 @@
+body
+{
+	background-color: black;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	font-family: "Roboto Slab";
+	color: white;
+}
+.main
+{
+	margin: 20px;
+	padding: 20px;
+	height: 96vh;
+	border: 0.5px solid gray;
+	overflow: hidden;
+}
+.name
+{
+	height: 100px;
+	width: 500px;
+	display: block;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+.name1 span
+{
+	font-weight: 400;
+	font-size: 38px;
+	letter-spacing: 2px;
+}
+.name2 span
+{
+	font-weight: 300;
+	font-size: 16px;
+	letter-spacing: 2px;
+}
+.tabs
+{
+	width: 200px;
+	height: 200px;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+.tabs ul
+{
+	list-style-type: none;
+	padding-left: 0;
+	letter-spacing: 3px;
+	line-height: 2.5em;
+}
+.basic
+{
+	text-align: right;
+	padding-top: 50px;
+	height: 500px;
+	display: block;
+	float: right;
+	width: 700px;
+	position: absolute;
+	bottom: 20px;
+	right: 40px;
+	overflow: auto;
+	padding-right: 20px;
+	scroll-behavior: smooth;
+	scroll-snap-type: y mandatory;
+}
+.basic::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.basic::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.basic::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+.basic ul
+{
+	list-style-type: none;
+	letter-spacing: 3px;
+}
+.basic li
+{
+	font-size: 18px;
+	font-weight: 300;
+}
+.basic ul a:hover
+{
+	color: gray;
+    text-decoration: underline;
+    transform: scale(1.5);
+    transition: color 0.3s ease, text-decoration 0.3s ease, transform 0.3s ease;
+}
+.basic span
+{
+	font-weight: 300;
+	font-size: 12px;
+}
+.completed, .working
+{
+	padding-bottom: 20px;
+}
+.completed span
+{
+	letter-spacing: 3px;
+	font-size: 30px;
+	font-weight: 400;
+}
+.working span
+{
+	letter-spacing: 3px;
+	font-size: 30px;
+	font-weight: 400;
+}
+.basic a
+{
+	color: white;
+	text-decoration: none;
+}
+.tabs a
+{
+	color: white;
+	text-decoration: none;
+}
+.tabs ul a:hover
+{
+	color: gray;
+    text-decoration: underline;
+    transform: scale(1.5);
+    transition: color 0.3s ease, text-decoration 0.3s ease, transform 0.3s ease;
+}
+.page-transition {
+    transition: opacity 10s ease-in-out;
+}
