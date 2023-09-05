@@ -80,6 +80,7 @@ body
 }
 .basic
 {
+	text-align: right;
 	padding-top: 50px;
 	height: 450px;
 	display: block;
@@ -89,8 +90,9 @@ body
 	bottom: 20px;
 	right: 40px;
 	overflow: auto;
-	padding-right: 20px;
+	padding-right: 30px;
 	text-align: right;
+
 }
 .basic span
 {
