@@ -6,27 +6,30 @@ body
 	overflow: hidden;
 	font-family: "Roboto Slab";
 	color: white;
+	display: flex;
+	min-height: 100vh;
 }
 .main
 {
-	margin: 20px;
-	padding: 20px;
-	height: 96vh;
+	margin: 40px;
+	padding: 40px;
+	width: 100vw;
 	border: 0.5px solid gray;
 	overflow: hidden;
+	position: relative;
 }
 .name
 {
 	height: 100px;
 	width: 500px;
 	display: block;
-	margin-left: 30px;
-	margin-top: 20px;
+	margin-left: 20px;
+	margin-top: 10px;
 }
 .name1 span
 {
 	font-weight: 400;
-	font-size: 38px;
+	font-size: 42px;
 	letter-spacing: 2px;
 }
 .name2 span
@@ -52,18 +55,18 @@ body
 .basic
 {
 	text-align: right;
-	padding-top: 50px;
+	padding-top: 70px;
 	height: 500px;
 	display: block;
 	float: right;
 	width: 700px;
-	position: absolute;
-	bottom: 20px;
+	bottom: 30px;
 	right: 40px;
 	overflow: auto;
 	padding-right: 20px;
 	scroll-behavior: smooth;
 	scroll-snap-type: y mandatory;
+	position: absolute;
 }
 .basic::-webkit-scrollbar {
     width: 0.5em;

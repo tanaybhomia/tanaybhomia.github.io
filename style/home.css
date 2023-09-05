@@ -23,27 +23,30 @@ body
 	overflow: hidden;
 	font-family: "Roboto Slab";
 	color: white;
+	display: flex;
+	min-height: 100vh;
 }
 .main
 {
-	margin: 20px;
-	padding: 20px;
-	height: 96vh;
+	margin: 40px;
+	padding: 40px;
+	width: 100vw;
 	border: 0.5px solid gray;
 	overflow: hidden;
+	position: relative;
 }
 .name
 {
 	height: 100px;
 	width: 500px;
 	display: block;
-	margin-left: 30px;
-	margin-top: 20px;
+	margin-left: 20px;
+	margin-top: 10px;
 }
 .name1 span
 {
 	font-weight: 400;
-	font-size: 38px;
+	font-size: 42px;
 	letter-spacing: 2px;
 }
 .name2 span
@@ -56,7 +59,7 @@ body
 {
 	width: 200px;
 	height: 200px;
-	margin-left: 30px;
+	margin-left: 20px;
 	margin-top: 20px;
 }
 .tabs ul
@@ -81,25 +84,19 @@ body
 .basic
 {
 	text-align: right;
-	padding-top: 50px;
+	padding-top: 30px;
 	height: 450px;
 	display: block;
 	float: right;
 	width: 250px;
-	position: absolute;
-	bottom: 20px;
-	right: 40px;
+	bottom: 30px;
+	right: 30px;
 	overflow: auto;
 	padding-right: 30px;
-	text-align: right;
-
+	position: absolute;
 }
 .basic span
 {
-	text-align: right;
-	letter-spacing: 2px;
+	letter-spacing: 3px;
 	font-weight: 200;
-}
-.page-transition {
-    transition: opacity 0.3s ease-in-out;
 }
