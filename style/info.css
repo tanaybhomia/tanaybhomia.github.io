@@ -77,7 +77,9 @@ body
 	display: block;
 	float: right;
 	width: 250px;
-	bottom: 10px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	bottom: 1px;
 	right: 20px;
 	overflow: auto;
 	padding-right: 30px;

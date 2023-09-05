@@ -1,27 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const mainContainer = document.querySelector(".main");
+    const typingAnimation = document.querySelector(".typing-text");
+    const mainContent = document.querySelector(".main");
+    const initialText = "I am Tanay"; // The text to be typed
+    const typingDelay = 50; // Delay in milliseconds between typing each character
+    const fadeInDuration = 1000; // Duration in milliseconds for fading in the main content
 
-    // Add the transition class to the main container
-    mainContainer.classList.add("page-transition");
+    // Function to simulate typing animation
+    const typeText = () => {
+        let charIndex = 0;
+        const typeInterval = setInterval(() => {
+            if (charIndex < initialText.length) {
+                typingAnimation.textContent += initialText.charAt(charIndex);
+                charIndex++;
+            } else {
+                // Typing animation complete
+                clearInterval(typeInterval);
 
-    // Remove the transition class after a short delay to complete the transition
-    setTimeout(function () {
-        mainContainer.classList.remove("page-transition");
-    }, 1000); // Adjust the delay as needed (300ms in this example)
+                // Fade in the main content
+                setTimeout(() => {
+                    mainContent.style.transition = `opacity ${fadeInDuration}ms ease-in-out`;
+                    mainContent.style.opacity = 1;
+                }, fadeInDuration);
+            }
+        }, typingDelay);
+    };
+
+    // Start the typing animation
+    typeText();
 });
-// When a link with a specific class (e.g., "page-link") is clicked
-document.querySelector("a.page-link").addEventListener("click", function (e) {
-    e.preventDefault(); // Prevent the default link behavior (page reload)
-
-    const targetUrl = this.href; // Get the target URL from the link
-
-    // Add the transition class to the main container
-    mainContainer.classList.add("page-transition");
-
-    // Wait for the transition to complete (adjust the delay as needed)
-    setTimeout(function () {
-        // Redirect to the new page
-        window.location.href = targetUrl;
-    }, 300); // Adjust the delay as needed
-});
-
