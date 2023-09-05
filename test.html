@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rippling Aura</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="rippleCanvas" style="position: absolute; top: 0; left: 0;"></canvas>
+
+    <script>
+        // Get the canvas element and context
+        const canvas = document.getElementById('rippleCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas size to cover the entire page
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Set up some initial variables
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        let radius = 50;
+        let frame = 0;
+
+        // Function to draw the rippling aura
+        function drawAura() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Create a noisy background
+            for (let i = 0; i < 1000; i++) {
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * canvas.height;
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+                ctx.fillRect(x, y, 1, 1);
+            }
+
+            // Create a white ripple with reduced size
+            if (frame < 100) { // Adjust the frame limit to control ripple size
+                const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, radius);
+                gradient.addColorStop(0, 'rgba(255, 255, 255, 0.8)');
+                gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+                ctx.fillStyle = gradient;
+
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            // Increase the radius for the ripple effect
+            radius += 1;
+
+            // Reset the radius and frame count when it reaches a certain size
+            if (radius > 500) {
+                radius = 50;
+                frame = 0;
+            }
+
+            frame++;
+
+            // Request the next frame
+            requestAnimationFrame(drawAura);
+        }
+
+        // Start the animation
+        drawAura();
+
+        // Resize canvas when the window size changes
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
