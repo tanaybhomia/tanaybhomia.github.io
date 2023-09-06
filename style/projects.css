@@ -136,3 +136,170 @@ body
 .page-transition {
     transition: opacity 10s ease-in-out;
 }
+
+/* Media query for smaller screens (e.g., tablets) */
+@media screen and (max-width: 768px) 
+{
+    .main
+    {
+        margin: 40px;
+        padding: 40px;
+        width: 100vw;
+        border: 0.5px solid gray;
+        overflow: hidden;
+        position: relative;
+    }
+    .name {
+        width: auto; /* Adjust width as needed */
+        margin-left: 0px;
+        padding-left: 0px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .name1 span {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .name2 span {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .tabs {
+        width: auto; 
+        text-align: center;
+        margin-left: 0px;
+    }
+
+    .tabs ul {
+        letter-spacing: 2px;
+        font-size: 12px;
+        display: inline-block;
+    }
+    .tabs li
+    {
+        display: inline-block;
+        min-width: 100px;
+    }
+      
+
+    .basic {
+        height: auto;
+        width: auto; 
+        bottom: 40px; 
+        right: 20px; 
+        left: 20px;
+        font-size: 14px;
+        text-align: center;
+        align-items: center;
+        padding-right: 0px;
+    }
+	.basic
+	{
+		padding-top: 70px;
+		height: 300px;
+		display: block;
+		float: right;
+		bottom: 30px;
+		right: 30px;
+		left: 30px;
+		overflow: auto;
+		scroll-behavior: smooth;
+		scroll-snap-type: y mandatory;
+		position: absolute;
+		text-align: center;
+		align-items: center;
+	}
+	.basic::-webkit-scrollbar {
+	    width: 0.5em;
+	}
+
+	.basic::-webkit-scrollbar-track {
+	    background: transparent;
+	}
+
+	.basic::-webkit-scrollbar-thumb {
+	    background-color: transparent;
+	}
+	.basic ul
+	{
+		padding-left: 0px;
+		list-style-type: none;
+		letter-spacing: 3px;
+	}
+	.basic li
+	{
+		font-size: 14px;
+		font-weight: 300;
+	}
+	.basic ul a:hover
+	{
+		color: gray;
+	    text-decoration: underline;
+	    transform: scale(1.5);
+	    transition: color 0.3s ease, text-decoration 0.3s ease, transform 0.3s ease;
+	}
+	.basic span
+	{
+		font-weight: 300;
+		font-size: 10px;
+	}
+	.completed, .working
+	{
+		padding-bottom: 20px;
+	}
+	.completed span
+	{
+		letter-spacing: 3px;
+		font-size: 18px;
+		font-weight: 400;
+	}
+	.working span
+	{
+		letter-spacing: 3px;
+		font-size: 18px;
+		font-weight: 400;
+	}
+	.basic a
+	{
+		color: white;
+		text-decoration: none;
+	}
+	.tabs a
+	{
+		color: white;
+		text-decoration: none;
+	}
+}
+
+/* Media query for mobile phones */
+@media screen and (max-width: 480px) {
+    .name {
+        width: auto;
+    }
+
+    .name1 span {
+        font-size: 32px; /* Adjust font size as needed */
+    }
+
+    .name2 span {
+        font-size: 12px; /* Adjust font size as needed */
+    }
+
+    .tabs {
+        width: auto; /* Adjust width as needed */
+    }
+
+    .tabs ul {
+        letter-spacing: 1px; /* Adjust letter-spacing as needed */
+    }
+
+    .basic {
+        height: auto; /* Adjust height as needed */
+        width: auto; /* Adjust width as needed */
+        bottom: 5px; /* Adjust positioning as needed */
+        right: 5px; /* Adjust positioning as needed */
+    }
+}

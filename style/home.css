@@ -1,88 +1,179 @@
-body
-{
-	background-color: black;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	font-family: "Roboto Slab";
-	color: white;
-	display: flex;
-	min-height: 100vh;
+/* Default styles for larger screens */
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: "Roboto Slab";
+    color: white;
+    display: flex;
+    min-height: 100vh;
 }
-.ease-in
-{
-	transition: all 0.5s ease-in;
+
+.ease-in {
+    transition: all 0.5s ease-in;
 }
-.main
-{
-	margin: 40px;
-	padding: 40px;
-	width: 100vw;
-	border: 0.5px solid gray;
-	overflow: hidden;
-	position: relative;
+
+.main {
+    margin: 40px;
+    padding: 40px;
+    width: 100vw;
+    border: 0.5px solid gray;
+    overflow: hidden;
+    position: relative;
 }
-.name
-{
-	height: 100px;
-	width: 500px;
-	display: block;
-	margin-left: 10px;
+
+.name {
+    height: 100px;
+    width: 500px;
+    display: block;
+    margin-left: 10px;
 }
-.name1 span
-{
-	font-weight: 400;
-	font-size: 42px;
-	letter-spacing: 2px;
+
+.name1 span {
+    font-weight: 400;
+    font-size: 42px;
+    letter-spacing: 2px;
 }
-.name2 span
-{
-	font-weight: 300;
-	font-size: 16px;
-	letter-spacing: 2px;
+
+.name2 span {
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 2px;
 }
-.tabs
-{
-	width: 200px;
-	height: 200px;
-	margin-left: 10px;
-	margin-top: 20px;
+
+.tabs {
+    width: 200px;
+    height: 200px;
+    margin-left: 10px;
+    margin-top: 20px;
 }
-.tabs ul
-{
-	list-style-type: none;
-	padding-left: 0;
-	letter-spacing: 3px;
-	line-height: 2.5em;
+
+.tabs ul {
+    list-style-type: none;
+    padding-left: 0;
+    letter-spacing: 3px;
+    line-height: 2.5em;
 }
-.tabs a
-{
-	color: white;
-	text-decoration: none;
+
+.tabs a {
+    color: white;
+    text-decoration: none;
 }
-.tabs ul a:hover
-{
-	color: gray;
+
+.tabs ul a:hover {
+    color: gray;
     text-decoration: underline;
     transform: scale(1.5);
     transition: color 0.3s ease, text-decoration 0.3s ease, transform 0.3s ease;
 }
-.basic
-{
-	text-align: right;
-	padding-top: 70px;
-	height: 500px;
-	display: block;
-	float: right;
-	width: 200px;
-	bottom: 30px;
-	right: 30px;
-	overflow: hidden;
-	padding-right: 20px;
-	position: absolute;
+
+.basic {
+    text-align: right;
+    padding-top: 70px;
+    height: 500px;
+    display: block;
+    float: right;
+    width: 200px;
+    bottom: 30px;
+    right: 30px;
+    overflow: hidden;
+    padding-right: 20px;
+    position: absolute;
 }
-.basic span
+
+.basic span {
+    letter-spacing: 3px;
+    font-weight: 300;
+}
+
+/* Media query for smaller screens (e.g., tablets) */
+@media screen and (max-width: 768px) 
 {
-	letter-spacing: 3px;
-	font-weight: 300;
+    .main
+    {
+        margin: 40px;
+        padding: 40px;
+        width: 100vw;
+        border: 0.5px solid gray;
+        overflow: hidden;
+        position: relative;
+    }
+    .name {
+        width: auto; /* Adjust width as needed */
+        margin-left: 0px;
+        padding-left: 0px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .name1 span {
+        font-size: 24px; /* Adjust font size as needed */
+        text-align: center;
+    }
+
+    .name2 span {
+        font-size: 14px; /* Adjust font size as needed */
+        text-align: center;
+    }
+
+    .tabs {
+        width: auto; /* Adjust width as needed */
+        text-align: center;
+        margin-left: 0px;
+    }
+
+    .tabs ul {
+        letter-spacing: 2px; /* Adjust letter-spacing as needed */
+        font-size: 12px;
+        display: inline-block;
+    }
+    .tabs li
+    {
+        display: inline-block;
+        min-width: 100px;
+    }
+      
+
+    .basic {
+        height: auto; /* Adjust height as needed */
+        width: auto; /* Adjust width as needed */
+        bottom: 40px; /* Adjust positioning as needed */
+        right: 20px; /* Adjust positioning as needed */
+        left: 20px;
+        font-size: 14px;
+        text-align: center;
+        align-items: center;
+        padding-right: 0px;
+    }
+}
+
+/* Media query for mobile phones */
+@media screen and (max-width: 480px) {
+    .name {
+        width: auto;
+    }
+
+    .name1 span {
+        font-size: 32px; /* Adjust font size as needed */
+    }
+
+    .name2 span {
+        font-size: 12px; /* Adjust font size as needed */
+    }
+
+    .tabs {
+        width: auto; /* Adjust width as needed */
+    }
+
+    .tabs ul {
+        letter-spacing: 1px; /* Adjust letter-spacing as needed */
+    }
+
+    .basic {
+        height: auto; /* Adjust height as needed */
+        width: auto; /* Adjust width as needed */
+        bottom: 5px; /* Adjust positioning as needed */
+        right: 5px; /* Adjust positioning as needed */
+    }
 }
