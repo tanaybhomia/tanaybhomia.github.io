@@ -70,7 +70,6 @@ body
 }
 .basic
 {
-	text-align: right;
 	padding-top: 250px;
 	height: 450px;
 	display: block;
@@ -94,7 +93,7 @@ body
 .basic ul
 {
 	list-style-type: none;
-	line-height: 2.5em;
+	line-height: 2.7em;
 	padding-right: 10px;
 }
 .basic a
@@ -102,7 +101,7 @@ body
 	color: white;
 	text-decoration: none;
 	letter-spacing: 3px;
-	font-weight: 400;
+	font-weight: 300;
 }
 .basic ul a:hover
 {
