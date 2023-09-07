@@ -1,13 +1,13 @@
 body
 {
-	background-color: black;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
 	font-family: "Roboto Slab";
-	color: white;
 	display: flex;
 	min-height: 100vh;
+	background-color: #fbf1c7;
+	opacity: 1;
 }
 .main
 {
@@ -17,6 +17,20 @@ body
 	border: 0.5px solid gray;
 	overflow: hidden;
 	position: relative;
+	border-radius: 10px;
+}
+.background-image {
+	background-image: url(/images/backg.jpg);
+	background-size: cover;
+	background-position: center;
+	opacity: 0.7;
+	filter: blur(50px); /* Apply blur only to the background image */
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
 }
 .name
 {
@@ -30,12 +44,14 @@ body
 	font-weight: 400;
 	font-size: 42px;
 	letter-spacing: 2px;
+	color: #282828;
 }
 .name2 span
 {
 	font-weight: 300;
 	font-size: 16px;
 	letter-spacing: 2px;
+	color: #282828;
 }
 .tabs
 {
@@ -86,18 +102,19 @@ body
 .basic li
 {
 	font-size: 18px;
-	font-weight: 300;
+	font-weight: 400;
+	color: #282828;
 }
 .basic ul a:hover
 {
-	color: gray;
+	color: #504945;
     text-decoration: underline;
     transform: scale(1.5);
     transition: color 0.3s ease, text-decoration 0.3s ease, transform 0.3s ease;
 }
 .basic span
 {
-	font-weight: 300;
+	font-weight: 400;
 	font-size: 12px;
 }
 .completed, .working
@@ -118,17 +135,17 @@ body
 }
 .basic a
 {
-	color: white;
+	color: #282828;
 	text-decoration: none;
 }
 .tabs a
 {
-	color: white;
+	color: #282828;
 	text-decoration: none;
 }
 .tabs ul a:hover
 {
-	color: gray;
+	color: #504945;
     text-decoration: underline;
     transform: scale(1.5);
     transition: color 0.3s ease, text-decoration 0.3s ease, transform 0.3s ease;
