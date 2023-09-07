@@ -206,6 +206,7 @@ body
 	{
 		padding-top: 50px;
 		height: 400px;
+		width: auto;
 		display: block;
 		float: right;
 		bottom: 30px;
@@ -213,14 +214,13 @@ body
 		left: 30px;
 		overflow: auto;
 		scroll-behavior: smooth;
-		scroll-snap-type: y mandatory;
 		position: absolute;
 		text-align: center;
 		align-items: center;
 		padding-right: 0px;
 	}
 	.basic::-webkit-scrollbar {
-	    width: 0.5em;
+	    width: 0.0em;
 	}
 
 	.basic::-webkit-scrollbar-track {
@@ -243,7 +243,6 @@ body
 	}
 	.basic ul a:hover
 	{
-		color: gray;
 	    text-decoration: underline;
 	    transform: scale(1.5);
 	    transition: color 0.3s ease, text-decoration 0.3s ease, transform 0.3s ease;
@@ -271,12 +270,10 @@ body
 	}
 	.basic a
 	{
-		color: white;
 		text-decoration: none;
 	}
 	.tabs a
 	{
-		color: white;
 		text-decoration: none;
 	}
 }
@@ -392,12 +389,11 @@ body
 	}
 	.basic a
 	{
-		color: white;
 		text-decoration: none;
+		font-weight: 400;
 	}
 	.tabs a
 	{
-		color: white;
 		text-decoration: none;
 	}
 }
