@@ -6,8 +6,9 @@ body
 	font-family: "Roboto Slab";
 	display: flex;
 	min-height: 100vh;
-	background-color: #fbf1c7;
+	background-color: rgba(251, 241, 199, 1);
 	opacity: 1;
+	z-index: -1;
 }
 .main
 {
@@ -18,6 +19,7 @@ body
 	overflow: hidden;
 	position: relative;
 	border-radius: 10px;
+	z-index: 99999;
 }
 .background-image {
 	background-image: url(/images/backg.jpg);
