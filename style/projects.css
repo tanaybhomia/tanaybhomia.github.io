@@ -282,8 +282,8 @@ body
 @media screen and (max-width: 480px) {
     .main
     {
-        margin: 40px;
-        padding: 40px;
+        margin: 20px;
+        padding: 20px;
         width: 100vw;
         border: 0.5px solid gray;
         overflow: hidden;
