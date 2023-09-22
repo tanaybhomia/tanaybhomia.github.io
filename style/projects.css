@@ -18,7 +18,7 @@ body
 	border: 0.5px solid gray;
 	overflow: hidden;
 	position: relative;
-	border-radius: 10px;
+	border-radius: 0px;
 	z-index: 99999;
 }
 .background-image {
