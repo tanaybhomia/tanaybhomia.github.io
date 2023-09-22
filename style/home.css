@@ -21,7 +21,7 @@ body
 	border: 0.2px solid gray;
 	overflow: hidden;
 	position: relative;
-    border-radius: 0px
+    border-radius: 0px /*Border radius does not change*/
 }
 .background-image {
 	background-image: url(/images/backg.jpg);
