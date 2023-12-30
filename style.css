@@ -7,9 +7,10 @@
 body, html {
     overflow: hidden;
     height: 100%;
-    background-color: black;
-    color: whitesmoke;
+	background-color: black;
+	color: whitesmoke;
 }
+
 
 .navigation {
     padding-top: 40px;
@@ -31,7 +32,7 @@ body, html {
     margin: 0;
     background-color: transparent;
     border: 0;
-    border-radius: 10px;
+    border-radius: 0px;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease; 
     position: relative;
@@ -41,11 +42,11 @@ body, html {
 .btn:hover {
     background-color: whitesmoke;
     color: black;
-    border-radius: 10px;
+    border-radius: 0px;
 }
 
 .btn span {
-    font-size: 18px;
+    font-size: 14px;
     z-index: 1;
 }
 
@@ -58,47 +59,125 @@ body, html {
     text-align: center;
     background: var(--background-gradient);
     position: relative;
-    color: white;
+	color: white;
 }
 
-.main span {
+#slowText
+{
     font-size: 120px;
-    z-index: 1;
 }
 
 .hidden {
     display: none;
 }
-
-.theme {
+.theme
+{
     width: 300px;
-    height: 40px;
+    height: 30px;
     position: absolute;
     bottom: 10px;
     right: 10px;
     z-index: 2;
+    display: flex;
+    justify-content: flex-end;
 }
-
+.theme label
+{
+    padding-left: 10px;
+    padding-right: 20px;
+    color: whitesmoke;
+    font-size: 14px;
+}
 .theme input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     margin-right: 5px; /* Add margin for spacing */
-    padding: 0;
-    opacity: 0; /* Hide the actual checkbox */
     position: relative;
-    cursor: pointer;
+    border: 2px solid white; /* Set the border color for both checkboxes */
+    background-color: transparent; /* Set the background color for both checkboxes */
 }
-
-.theme label {
-    width: 20px;
-    height: 20px;
-    border: 2px solid white; /* Change border color to white */
-    margin-right: 10px; /* Add margin for spacing */
-    position: relative;
-    cursor: pointer;
-    margin-left: 10px ;
+.theme input[type="checkbox"]:checked {
+    background-color: white;
+    border: 2px solid black; /* Add border color for checked state */
 }
-
-.theme input[type="checkbox"]:checked + label {
-    background-color: white; /* Change the background color when checked */
+.info 
+{
+    height: 200px;
+    width: 450px;
+    position: absolute;
+    right: 300px;
+    bottom: 200px;
+}
+.info span
+{
+    text-align: right;
+    line-height: 25px;
+    font-size: 15px;
+    letter-spacing: 3px;
+}
+.profile
+{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    left: 350px;
+    top: 200px;
+    border: 2px solid white;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+}
+.profile img
+{
+    height: 200px;
+    width: 230px;
+}
+.socials
+{
+    position: absolute;
+    height: 200px;
+    width: 300px;
+    right: 200px;   
+    bottom: 200px;
+}
+.socials ul
+{
+    list-style-type: none;
+    justify-content: left;
+    text-align: left;
+    line-height: 40px;
+}
+.socials span
+{
+    font-size: 16px;
+}
+.projects 
+{
+    height: 450px;
+    width: 600px;
+    position: absolute;
+    left: 200px;
+    top: 200px;
+    overflow: auto;
+    scroll-margin: 0px;
+    scrollbar-width: 0px;
+    text-align: left;
+}
+.projects #heading
+{
+    font-size: 42px;
+}
+.projects ul
+{
+    list-style: none;
+    text-align: left;
+    line-height: 30px;
+}
+.projects li
+{
+    font-size: 18px;
+}
+#extra
+{
+    padding-left: 25px;
 }
