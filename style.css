@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    overflow: hidden;
+    height: 100%;
+    background-color: black;
+    color: whitesmoke;
+}
+
+.navigation {
+    padding-top: 40px;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+    background: var(--background-gradient);
+    position: relative;
+}
+
+.btn {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    margin: 0;
+    background-color: transparent;
+    border: 0;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+    position: relative;
+    color: white;
+}
+
+.btn:hover {
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 10px;
+}
+
+.btn span {
+    font-size: 18px;
+    z-index: 1;
+}
+
+.main {
+    width: 100%;
+    height: calc(100% - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--background-gradient);
+    position: relative;
+    color: white;
+}
+
+.main span {
+    font-size: 120px;
+    z-index: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+.theme {
+    width: 300px;
+    height: 40px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+}
+
+.theme input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px; /* Add margin for spacing */
+    padding: 0;
+    opacity: 0; /* Hide the actual checkbox */
+    position: relative;
+    cursor: pointer;
+}
+
+.theme label {
+    width: 20px;
+    height: 20px;
+    border: 2px solid white; /* Change border color to white */
+    margin-right: 10px; /* Add margin for spacing */
+    position: relative;
+    cursor: pointer;
+    margin-left: 10px ;
+}
+
+.theme input[type="checkbox"]:checked + label {
+    background-color: white; /* Change the background color when checked */
+}
