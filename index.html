@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="navigation">
@@ -19,7 +20,7 @@
 		</button>
     </div>
     <div class="main">
-        <span id="slowText hidden"></span>
+        <span id="slowText"></span>
 		<div class="theme">
 			<input type="checkbox" id="darkModeCheckbox">
 			<label for="darkModeCheckbox">
@@ -31,8 +32,8 @@
 				Light
 			</label>
 		</div>
-		<div class="info hidden">
-			<span id="infoing">
+		<div class="info">
+			<span id="infoing" class="hidden">
 				I am Tanay Bhomia, a passionate and detail-oriented individual hailing from the vibrant land of Rajasthan, Pilani.With a blend of technical expertise and a keen eye for design, I strive to bring innovation to every project I undertake. Explore my portfolio, and join me in the exciting world where ideas come to life through code and design.
 			</span>
 		</div>
@@ -42,14 +43,22 @@
 		<div class="socials hidden">
 			<span>
 				<ul>
-					<li>Instagram ↗</li>
-					<li>Twitter ↗</li>
-					<li>Github ↗</li>
-					<li>Resume ↗</li>
+					<li>
+						<a href="https://www.instagram.com/tanaybhomia/" target="_blank"><i class="fa fa-instagram" style="font-size:16px;padding-right: 10px;"></i>Instagram</a>	
+					</li>
+					<li>
+						<a href="https://twitter.com/bhomiatanay_11" target="_blank"><i class="fa fa-twitter" style="font-size:16px;padding-right: 10px;"></i>Twitter</a>
+					</li>
+					<li>
+						<a href="https://github.com/tanaybhomia" target="_blank"><i class="fa fa-github" style="font-size:16px;padding-right: 10px;"></i>Github</a>
+					</li>
+					<li>
+						<a href="https://storage.rxresu.me/clp9g0sj7dwjo9hun5ya1t71d/resumes/clp9kt3jn0qqiqo5qitkxfh6m.pdf" target="_blank"><i class="fa fa-paperclip" style="font-size:16px;padding-right: 10px;"></i>Resume </a>
+					</li>
 			</ul>
 			</span>
 		</div>
-		<div class="projects">
+		<div class="projects hidden">
 			<span id="heading">
 				Completed . . .
 			</span>
@@ -69,11 +78,11 @@
 				</li>
 				<span id ="extra">A CLI based tool to track expenses | Python</span>
 				<li>
-					QR Gen
+					<a href="https://github.com/tanaybhomia/QRGen">QR Gen</a>
 				</li>
 				<span id = "extra">A simple QR code generator | Python</span>
 				<li>
-					JS Games
+					<a href="https://github.com/tanaybhomia/JSMiniGames">JS Games</a>
 				</li>
 				<span id = "extra">A group of simple games made from JS | JS</span>
 			</ul>
@@ -84,8 +93,10 @@
 			<br>
 			<br>
 			<ul>
-				<li>DimeSage</li>
-				<span>My Final Year Project</span>
+				<li>
+					<a href="https://github.com/tanaybhomia/FinSmart.Ai">DimeSage</a>
+				</li>
+				<span id="extra">My Final Year Project</span>
 			</ul>
 			<br>
 		</div>
