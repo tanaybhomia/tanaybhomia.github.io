@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, delay);
     }
 
-	const name = "TANAY  BHOMIA";	
+	const name = "Hello, there";	
 	var text = document.getElementById("slowText");
 	// Call the function for each target element
     displaySlowly(slowText, name, 120);
@@ -21,20 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
 const info = document.getElementById("textHome");
 const social = document.getElementById("textSocial");
 const project = document.getElementById("textProject");
+const darkModeCheckbox = document.getElementById("darkModeCheckbox");
+const lightModeCheckbox = document.getElementById("lightModeCheckbox");
 
 info.addEventListener("click",showinfo);
 social.addEventListener("click",showsocial);
 project.addEventListener("click",showproject);
-
-function dark()
-{
-	
-}
-
-function light()
-{
-
-}
 
 function showinfo()
 {

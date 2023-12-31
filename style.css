@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,14 +9,15 @@
 body, html {
     overflow: hidden;
     height: 100%;
-	background-color: black;
-	color: whitesmoke;
+	background-color: whitesmoke;
+	color: black;
+    font-family: 'Space Mono',sans-serif;
 }
 .grain {
             position: absolute;
-            width: 0.5px;
-            height: 0.5px;
-            background-color: #595959; /* Color of the grains */
+            width: 1px;
+            height: 1px;
+            background-color: black; /* Color of the grains */
             animation: moveGrain linear infinite;
         }
 
@@ -36,6 +39,7 @@ body, html {
     margin: 0;
     background: var(--background-gradient);
     position: relative;
+    font-family: 'Space Mono',sans-serif;
 }
 
 .btn {
@@ -50,12 +54,13 @@ body, html {
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease; 
     position: relative;
-    color: white;
+    color: black;
+    font-family: 'Space Mono',sans-serif;
 }
 
 .btn:hover {
-    background-color: whitesmoke;
-    color: black;
+    background-color: black;
+    color: whitesmoke;
     border-radius: 12px;
 }
 
@@ -73,12 +78,13 @@ body, html {
     text-align: center;
     background: var(--background-gradient);
     position: relative;
-	color: white;
+	color: black;
 }
 
 #slowText
 {
     font-size: 120px;
+    font-family: 'Space Mono', sans-serif;
 }
 
 .hidden {
@@ -101,7 +107,7 @@ body, html {
 {
     padding-left: 10px;
     padding-right: 20px;
-    color: whitesmoke;
+    color: black;
     font-size: 14px;
 }
 .theme input[type="checkbox"] {
@@ -109,12 +115,12 @@ body, html {
     height: 15px;
     margin-right: 5px; /* Add margin for spacing */
     position: relative;
-    border: 2px solid white; /* Set the border color for both checkboxes */
+    border: 2px solid black; /* Set the border color for both checkboxes */
     background-color: transparent; /* Set the background color for both checkboxes */
 }
 .theme input[type="checkbox"]:checked {
-    background-color: white;
-    border: 2px solid black; /* Add border color for checked state */
+    background-color: black;
+    border: 2px solid whitesmoke; /* Add border color for checked state */
 }
 .info 
 {
@@ -138,7 +144,7 @@ body, html {
     position: absolute;
     left: 350px;
     top: 200px;
-    border: 2px solid white;
+    border: 2px solid black;
     overflow: hidden;
     object-fit: cover;
     object-position: center;
@@ -169,7 +175,7 @@ body, html {
 }
 .socials a
 {   
-    color: white;
+    color: black;
     text-decoration: none;
     transition: text-decoration 0.5s ease;
     border-radius: 12px;
@@ -210,7 +216,7 @@ body, html {
 }
 .projects a
 {   
-    color: white;
+    color: black;
     text-decoration: none;
     transition: text-decoration 0.5s ease;
     border-radius: 12px;
