@@ -12,9 +12,9 @@ body, html {
 }
 .grain {
             position: absolute;
-            width: 1px;
-            height: 1px;
-            background-color: #999; /* Color of the grains */
+            width: 0.5px;
+            height: 0.5px;
+            background-color: #595959; /* Color of the grains */
             animation: moveGrain linear infinite;
         }
 

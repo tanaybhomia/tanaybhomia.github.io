@@ -84,17 +84,19 @@ function showproject()
 	const socials = document.querySelector(".socials");
 	socials.classList.add("hidden");
 }
-function createGrains() {
-            const grainContainer = document.body;
+function createGrains() 
+{
+	const grainContainer = document.body;
 
-            for (let i = 0; i < 100; i++) {
-                const grain = document.createElement('div');
-                grain.className = 'grain';
-                grain.style.left = `${Math.random() * window.innerWidth}px`;
-                grain.style.top = `${Math.random() * window.innerHeight}px`;
-                grain.style.animationDuration = `${Math.random() * 2 + 1}s`; // Vary the animation duration
-                grainContainer.appendChild(grain);
-            }
-        }
+	for (let i = 0; i < 1000; i++) 
+	{
+		const grain = document.createElement('div');
+		grain.className = 'grain';
+		grain.style.left = `${Math.random() * window.innerWidth}px`;
+		grain.style.top = `${Math.random() * window.innerHeight}px`;
+		grain.style.animationDuration = `${Math.random() * 2 + 1}s`; // Vary the animation duration
+		grainContainer.appendChild(grain);
+	}        
+}
 
-        createGrains();
+createGrains();
