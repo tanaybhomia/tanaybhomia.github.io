@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, delay);
   }
 
-  const name = "Hello, there";
+  const name = "Hey, I am Tanay";
   var text = document.getElementById("slowText");
   // Call the function for each target element
   displaySlowly(slowText, name, 120);
