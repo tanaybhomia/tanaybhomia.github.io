@@ -140,17 +140,16 @@ html {
 }
 .profile {
   height: 200px;
-  width: 200px;
+  width: 230px;
   position: absolute;
   left: 350px;
   top: 200px;
   border: 2px solid black;
   overflow: hidden;
-  object-fit: cover;
   object-position: center;
 }
 .profile img {
-  height: 200px;
+  height: 220px;
   width: 230px;
   z-index: 2;
 }
