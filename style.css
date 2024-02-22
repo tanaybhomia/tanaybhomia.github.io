@@ -10,15 +10,15 @@ body,
 html {
   overflow: hidden;
   height: 100%;
-  background-color: whitesmoke;
-  color: black;
+  background-color: black;
+  color: white;
   font-family: "Space Mono", sans-serif;
 }
 .grain {
   position: absolute;
   width: 1px;
   height: 1px;
-  background-color: black; /* Color of the grains */
+  background-color: white; /* Color of the grains */
   animation: moveGrain linear infinite;
   z-index: 0;
 }
@@ -59,13 +59,13 @@ html {
   text-decoration: none;
   transition: background-color 0.3s ease, color 0.3s ease;
   position: relative;
-  color: black;
+  color: white;
   font-family: "Space Mono", sans-serif;
 }
 
 .btn:hover {
-  background-color: black;
-  color: whitesmoke;
+  background-color: white;
+  color: black;
   border-radius: 12px;
 }
 
@@ -83,7 +83,7 @@ html {
   text-align: center;
   background: var(--background-gradient);
   position: relative;
-  color: black;
+  color: white;
 }
 
 #slowText {
@@ -118,12 +118,12 @@ html {
   height: 15px;
   margin-right: 5px; /* Add margin for spacing */
   position: relative;
-  border: 2px solid black; /* Set the border color for both checkboxes */
+  border: 2px solid white; /* Set the border color for both checkboxes */
   background-color: transparent; /* Set the background color for both checkboxes */
 }
 .theme input[type="checkbox"]:checked {
-  background-color: black;
-  border: 2px solid whitesmoke; /* Add border color for checked state */
+  background-color: white;
+  border: 2px solid black; /* Add border color for checked state */
 }
 .info {
   height: 200px;
@@ -144,7 +144,7 @@ html {
   position: absolute;
   left: 350px;
   top: 200px;
-  border: 2px solid black;
+  border: 2px solid white;
   overflow: hidden;
   object-position: center;
 }
@@ -170,7 +170,7 @@ html {
   font-size: 18px;
 }
 .socials a {
-  color: black;
+  color: white;
   text-decoration: none;
   transition: text-decoration 0.5s ease;
   border-radius: 12px;
@@ -204,7 +204,7 @@ html {
   padding-left: 25px;
 }
 .projects a {
-  color: black;
+  color: white;
   text-decoration: none;
   transition: text-decoration 0.5s ease;
   border-radius: 12px;
