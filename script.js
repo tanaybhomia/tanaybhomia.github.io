@@ -23,10 +23,7 @@ datespan.innerHTML = formatted;
 // Initialize draggable functionality for elements with 'draggable' class
 class DraggableManager {
   constructor() {
-    // Initialize all draggable elements
     this.initDraggableElements();
-
-    // Setup mutation observer to handle dynamically added elements
     this.observeDOMChanges();
   }
 
@@ -37,7 +34,6 @@ class DraggableManager {
   }
 
   setupDraggableElement(element) {
-    // Skip if already initialized
     if (element.dataset.draggableInitialized) return;
 
     let isDragging = false;
@@ -48,8 +44,36 @@ class DraggableManager {
     let xOffset = 0;
     let yOffset = 0;
 
+    const getConstrainedPosition = (x, y) => {
+      const container = element.closest(".maincontainer");
+      if (!container) return { x, y };
+
+      // Get container and element dimensions
+      const containerRect = container.getBoundingClientRect();
+      const elementRect = element.getBoundingClientRect();
+
+      // Calculate the maximum positions
+      const maxX = containerRect.width - elementRect.width;
+      const maxY = containerRect.height - elementRect.height;
+
+      // Constrain the position
+      return {
+        x: Math.min(Math.max(0, x), maxX),
+        y: Math.min(Math.max(0, y), maxY),
+      };
+    };
+
     const dragStart = (e) => {
-      if (e.button !== 0) return; // Only left mouse button
+      if (e.button !== 0) return;
+
+      const rect = element.getBoundingClientRect();
+      const containerRect = element
+        .closest(".maincontainer")
+        .getBoundingClientRect();
+
+      // Calculate the initial position relative to the container
+      xOffset = rect.left - containerRect.left;
+      yOffset = rect.top - containerRect.top;
 
       initialX = e.clientX - xOffset;
       initialY = e.clientY - yOffset;
@@ -61,26 +85,28 @@ class DraggableManager {
 
     const drag = (e) => {
       if (!isDragging) return;
-
       e.preventDefault();
 
+      // Calculate new position relative to mouse movement
       currentX = e.clientX - initialX;
       currentY = e.clientY - initialY;
 
-      xOffset = currentX;
-      yOffset = currentY;
+      // Get constrained position
+      const constrainedPos = getConstrainedPosition(currentX, currentY);
+      currentX = constrainedPos.x;
+      currentY = constrainedPos.y;
 
+      // Update position
       setTranslate(currentX, currentY, element);
     };
 
     const dragEnd = () => {
-      initialX = currentX;
-      initialY = currentY;
       isDragging = false;
     };
 
     const setTranslate = (xPos, yPos, el) => {
-      el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
+      el.style.left = `${xPos}px`;
+      el.style.top = `${yPos}px`;
     };
 
     // Add event listeners
@@ -91,23 +117,34 @@ class DraggableManager {
     // Prevent default drag behavior
     element.addEventListener("dragstart", (e) => e.preventDefault());
 
+    // Store cleanup function
+    element.draggableCleanup = () => {
+      element.removeEventListener("mousedown", dragStart);
+      document.removeEventListener("mousemove", drag);
+      document.removeEventListener("mouseup", dragEnd);
+      element.removeEventListener("dragstart", (e) => e.preventDefault());
+    };
+
     // Mark as initialized
     element.dataset.draggableInitialized = "true";
   }
 
   observeDOMChanges() {
-    // Create an observer instance
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         mutation.addedNodes.forEach((node) => {
-          if (node.nodeType === 1 && node.classList.contains("draggable")) {
-            this.setupDraggableElement(node);
+          if (node.nodeType === 1) {
+            if (node.classList.contains("draggable")) {
+              this.setupDraggableElement(node);
+            }
+            node.querySelectorAll(".draggable").forEach((element) => {
+              this.setupDraggableElement(element);
+            });
           }
         });
       });
     });
 
-    // Start observing the document with the configured parameters
     observer.observe(document.body, {
       childList: true,
       subtree: true,
@@ -115,7 +152,7 @@ class DraggableManager {
   }
 }
 
-// Initialize the draggable manager when the DOM is loaded
+// Initialize when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
   new DraggableManager();
 });
