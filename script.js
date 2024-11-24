@@ -156,3 +156,19 @@ class DraggableManager {
 document.addEventListener("DOMContentLoaded", () => {
   new DraggableManager();
 });
+
+// making links to open on double click
+// Select all links with the 'link' class
+const links = document.querySelectorAll(".link");
+
+// Prevent default single-click behavior
+links.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault(); // Prevent navigation on single click
+  });
+
+  // Open the link on double-click
+  link.addEventListener("dblclick", () => {
+    window.open(link.href, link.target); // Navigate to the URL in the target specified
+  });
+});
