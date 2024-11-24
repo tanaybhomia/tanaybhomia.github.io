@@ -35,9 +35,6 @@ body {
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
 }
 .leftside {
     display: flex;
@@ -64,4 +61,138 @@ body {
     gap: 5px;
     justify-content: center;
     align-items: center;
+}
+.maincontainer {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.draggable {
+    position: absolute;
+    cursor: grab;
+    user-select: none;
+    z-index: 1000;
+    touch-action: none;
+}
+.draggable:active {
+    cursor: grabbing;
+}
+.musicplayer {
+    height: 300px;
+    width: 220px;
+    color: black;
+    position: absolute;
+    /* border: solid white 2px; */
+    top: 30px;
+    right: 30px;
+    display: grid;
+    border-radius: 10px;
+    background: rgba(248, 248, 248, 0.4);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    grid-template-rows: 3fr 1fr;
+}
+.musicplayer > *:nth-child(n) {
+    cursor: pointer;
+}
+/* Style for the progress bar container */
+.progress-container {
+    width: 100%; /* Full width of the progress bar section */
+    height: 8px; /* Thickness of the bar */
+    background: #a4a4a5; /* Light gray background */
+    border-radius: 4px; /* Rounded corners */
+    position: relative;
+    margin: 10px 0; /* Space above and below the progress bar */
+}
+
+/* Progress fill inside the container */
+.progress-bar {
+    width: 30%; /* Adjust dynamically to reflect the current progress */
+    height: 100%;
+    background: #525253;
+    border-radius: 4px; /* Match the container's rounded corners */
+    position: relative;
+}
+
+/* Knob/Handle for progress */
+.progress-handle {
+    width: 5px; /* Width of the knob */
+    height: 16px; /* Height of the knob */
+    background: #525253; /* White knob */
+    border: 2px solid #525253; /* Black border */
+    border-radius: 20%; /* Rounded knob */
+    position: absolute;
+    right: 0; /* Positioned at the end of the progress bar */
+    top: 50%;
+    transform: translate(50%, -50%); /* Center the knob vertically */
+}
+
+.albumcover {
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+}
+.albumcover img {
+    height: 100%;
+    width: 100%;
+}
+.windowbuttons {
+    position: absolute;
+    /* border: solid 2px white; */
+    height: 20px;
+    width: 70px;
+    margin: 10px;
+    left: -10px;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+.windowbuttons .red {
+    color: #ff4e4e;
+}
+.windowbuttons .yellow {
+    color: #ffb900;
+}
+.windowbuttons .green {
+    color: #00cd16;
+}
+.infotab {
+    background: rgba(248, 248, 248, 0.4);
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: grid;
+    color: #6f6f70;
+    grid-template-rows: 1fr 1fr 1fr;
+    font-size: 14px;
+    align-items: center;
+    text-align: center;
+}
+.songname {
+    font-weight: bold;
+    align-items: center;
+}
+.minutes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.actualbtns {
+    font-size: 26px;
+    align-items: center;
+    text-align: center;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
 }
