@@ -1,0 +1,67 @@
+@font-face {
+    font-family: "Sf";
+    font-weight: 400;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+body {
+    font-family: "Sf";
+    background: url("assets/wallpapers/cherrywall.png") no-repeat center center
+        fixed;
+    background-size: cover;
+    overflow: hidden;
+    padding: 0;
+    scrollbar-width: none;
+}
+.navbar {
+    height: 28px;
+    width: 100%;
+    background-color: rgba(248, 248, 248, 0.4);
+    display: flex;
+    gap: 10px;
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.leftside {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.leftside > *:nth-child(n) {
+    cursor: pointer;
+}
+.rightside {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.rightside > *:nth-child(n) {
+    cursor: pointer;
+}
+.battery {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
