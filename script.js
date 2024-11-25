@@ -172,3 +172,30 @@ links.forEach((link) => {
     window.open(link.href, link.target); // Navigate to the URL in the target specified
   });
 });
+
+// For opening the aboutme.html file
+document.querySelector(".txtfile").addEventListener("dblclick", function () {
+  loadIframeContent("/assets/iframeitems/aboutme/aboutme.html");
+});
+
+// For opening the photos.html file
+document
+  .querySelector(".photofolder")
+  .addEventListener("dblclick", function () {
+    loadIframeContent("/assets/iframeitems/photos/photos.html");
+  });
+
+// for opening the projects files
+
+// Your existing loadIframeContent function should remain the same
+function loadIframeContent(url) {
+  const iframe = document.querySelector("#contentFrame");
+  iframe.src = url;
+  document.querySelector(".iframeContainer").style.display = "flex";
+}
+function closeIframe() {
+  const container = document.querySelector(".iframeContainer");
+  const iframe = document.getElementById("contentFrame");
+  iframe.src = "";
+  container.style.display = "none";
+}

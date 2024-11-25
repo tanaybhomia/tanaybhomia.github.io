@@ -58,6 +58,15 @@
             </div>
         </div>
         <div class="maincontainer">
+            <div class="iframeContainer">
+                <div class="modal-wrapper">
+                    <iframe id="contentFrame" src="" frameborder="0"></iframe>
+                    <button
+                        class="iframe-close"
+                        onclick="closeIframe()"
+                    ></button>
+                </div>
+            </div>
             <div class="musicplayer draggable">
                 <div draggable="true" class="albumcover">
                     <div class="windowbuttons">
@@ -135,6 +144,18 @@
                 <img src="/assets/icons/trash.png" />
                 <div class="appname">
                     <p>Trash</p>
+                </div>
+            </div>
+            <div class="txtfile appicon draggable">
+                <img src="/assets/icons/textfile.png" />
+                <div class="appname">
+                    <p>about.txt</p>
+                </div>
+            </div>
+            <div class="photofolder appicon draggable">
+                <img src="/assets/icons/folder.png" />
+                <div class="appname">
+                    <p>Photos</p>
                 </div>
             </div>
         </div>

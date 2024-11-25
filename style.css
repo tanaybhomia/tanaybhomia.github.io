@@ -23,6 +23,53 @@ body {
 a {
     text-decoration: none;
 }
+
+.iframeContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 200000;
+}
+
+.modal-wrapper {
+    position: relative;
+    width: 60%;
+    height: 60%;
+}
+
+#contentFrame {
+    width: 100%;
+    height: 100%;
+    border: solid 1px #ddd;
+    border-radius: 12px;
+    background: white;
+}
+
+.iframe-close {
+    position: absolute;
+    background-color: #ff4e4e;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 300000;
+    height: 15px;
+    width: 15px;
+    margin: 10px;
+    left: -1px;
+    top: -2px;
+}
 .navbar {
     height: 28px;
     width: 100%;
@@ -207,6 +254,7 @@ a {
     width: 100px;
     align-items: center;
     justify-content: center;
+    text-align: center;
     gap: 1px;
 }
 
@@ -214,11 +262,15 @@ a {
     height: 75px;
     width: 75px;
     margin: 0;
+    align-items: center;
+    justify-content: center;
 }
 
 .appname {
     color: white;
     justify-content: center;
+    text-align: center;
+    align-items: center;
     display: flex;
     margin: 0; /* Remove any margin from the .appname container */
 }
@@ -226,6 +278,9 @@ a {
 .appname p {
     margin: 0; /* Remove any default margin around the text */
     line-height: 0;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 
 .githublink {
@@ -248,7 +303,24 @@ a {
     bottom: 100px;
     right: 150px;
 }
-.trash img {
+.txtfile {
+    position: absolute;
+    bottom: 300px;
+    right: 300px;
+}
+.photofolder {
+    position: absolute;
+    top: 100px;
+    left: 200px;
+}
+.txtfile p {
+    padding-top: 10px;
+}
+.txtfile img {
     height: 70px;
-    width: 70px;
+    width: 60px;
+}
+.photofolder img {
+    width: 60px;
+    height: 60px;
 }
