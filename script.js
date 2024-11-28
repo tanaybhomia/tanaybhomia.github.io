@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Trigger GSAP animations
         startAnimations();
       }, 500); // Matches the CSS transition duration
-    }, 1500); // Delay before hiding loader
+    }, 2000); // Delay before hiding loader
   });
 
   function startAnimations() {
