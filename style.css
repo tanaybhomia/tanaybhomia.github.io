@@ -19,6 +19,64 @@ body {
     padding: 0;
     scrollbar-width: none;
 }
+#mac-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(248, 248, 248, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(50px);
+    transition:
+        opacity 0.5s ease,
+        visibility 0.5s;
+}
+.welcome-txt {
+    font-size: 28px;
+}
+.name {
+    font-weight: 700;
+    font-style: italic;
+}
+.loader-container {
+    text-align: center;
+}
+.apple-logo i {
+    font-size: 84px;
+}
+.loader-spinner {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.spinner-dot {
+    width: 10px;
+    height: 10px;
+    background: black;
+    border-radius: 50%;
+    margin: 0 5px;
+    animation: bounce 1.5s infinite;
+}
+@keyframes bounce {
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}
+.loading-text {
+    margin-top: 15px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: black;
+}
 a {
     text-decoration: none;
 }
@@ -145,6 +203,7 @@ a {
     cursor: grabbing;
 }
 .musicplayer {
+    opacity: 0;
     height: 300px;
     width: 220px;
     color: black;
@@ -160,6 +219,7 @@ a {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     grid-template-rows: 3fr 1fr;
+    transform: translateY(50px) scale(0.8);
 }
 .musicplayer > *:nth-child(n) {
     cursor: pointer;
@@ -251,6 +311,7 @@ a {
     text-align: center;
 }
 .appicon {
+    opacity: 0; /* Hidden initially */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -259,26 +320,30 @@ a {
     text-align: center;
     gap: 8px; /* Consistent gap between icon and text */
     padding: 10px; /* Add some padding for breathing room */
+    transform: translateY(50px) scale(0.8); /* GSAP will animate from here */
+    box-shadow:;
+    height: auto;
 }
 
 .appicon img {
-    height: 64px; /* Uniform height for all icons */
-    width: 64px; /* Uniform width for all icons */
+    height: 80px; /* Uniform height for all icons */
+    width: 80px; /* Uniform width for all icons */
     object-fit: contain; /* Ensures proper scaling without distortion */
     margin-bottom: 4px; /* Small additional margin before text */
 }
-
 .appname {
     color: white;
     font-size: 14px; /* Uniform font size for app names */
-    line-height: 0.1; /* Improved readability */
+    line-height: 1.5; /* Improve readability */
     max-width: 100%; /* Ensure text doesn't overflow */
     word-wrap: break-word; /* Allow long names to wrap */
+    text-align: center; /* Center align text */
 }
 
 .appname p {
     margin: 0;
-    text-align: center;
+    white-space: normal; /* Allow text to wrap when needed */
+    word-wrap: break-word; /* Break long words to fit in container */
 }
 .githublink {
     position: absolute;
@@ -320,8 +385,28 @@ a {
     bottom: 100px;
     left: 600px;
 }
+.iammac {
+    position: absolute;
+    bottom: 130px;
+    right: 870px;
+}
 .notes {
     position: absolute;
     top: 300px;
     left: 400px;
+}
+.poster1 {
+    position: absolute;
+    top: 300px;
+    left: 800px;
+}
+.poster2 {
+    position: absolute;
+    top: 380px;
+    left: 900px;
+}
+.poster3 {
+    position: absolute;
+    top: 450px;
+    left: 800px;
 }

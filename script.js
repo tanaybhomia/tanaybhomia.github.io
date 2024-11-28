@@ -199,14 +199,18 @@ document.querySelector(".notes").addEventListener("dblclick", function () {
 document
   .querySelector(".dupezfolder")
   .addEventListener("dblclick", function () {
-    loadIframeContent("https://tanaybhomia.github.io/MockWebsites/");
+    loadIframeContent(
+      "https://tanaybhomia.github.io/MockWebsites/DopezStudio/index.html",
+    );
     const modalwrapper = document.querySelector(".modal-wrapper");
     modalwrapper.style.width = "90%";
     modalwrapper.style.height = "90%";
   });
 
 document.querySelector(".iammac").addEventListener("dblclick", function () {
-  loadIframeContent("https://tanaybhomia.github.io/MockWebsites/");
+  loadIframeContent(
+    "https://tanaybhomia.github.io/MockWebsites/IamMac/public/index.html",
+  );
   const modalwrapper = document.querySelector(".modal-wrapper");
   modalwrapper.style.width = "90%";
   modalwrapper.style.height = "90%";
@@ -227,3 +231,49 @@ function closeIframe() {
   modalwrapper.style.width = "60%";
   modalwrapper.style.height = "60%";
 }
+
+// For Loading Animation
+document.addEventListener("DOMContentLoaded", () => {
+  const loader = document.querySelector("#mac-loader");
+
+  // Hide loader and trigger animations after the page fully loads
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      loader.style.opacity = "0";
+      loader.style.visibility = "hidden";
+
+      setTimeout(() => {
+        loader.remove(); // Optionally remove loader from the DOM
+
+        // Trigger GSAP animations
+        startAnimations();
+      }, 500); // Matches the CSS transition duration
+    }, 1500); // Delay before hiding loader
+  });
+
+  function startAnimations() {
+    const timeline = gsap.timeline();
+
+    // Animate all app icons with a staggered effect
+    timeline
+      .to(".appicon", {
+        opacity: 1, // Fade in
+        scale: 1, // Restore scale to normal
+        y: 0, // Move to original position
+        stagger: 0.1, // Stagger animations by 0.1 seconds
+        duration: 0.8,
+        ease: "power3.out",
+      })
+      .to(
+        ".musicplayer",
+        {
+          opacity: 1, // Fade in
+          scale: 1, // Restore scale
+          y: 0, // Move to original position
+          duration: 0.8,
+          ease: "power3.out",
+        },
+        "-=0.5", // Overlap with previous animation
+      );
+  }
+});

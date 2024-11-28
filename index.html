@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>T A N A Y</title>
         <link rel="stylesheet" href="/style.css" />
         <link
             href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
@@ -11,6 +11,20 @@
         />
     </head>
     <body>
+        <div id="mac-loader">
+            <div class="loader-container">
+                <div class="loader-spinner">
+                    <div class="spinner-dot"></div>
+                    <div class="spinner-dot"></div>
+                    <div class="spinner-dot"></div>
+                </div>
+                <div class="loading-text">
+                    <span class="welcome-txt"
+                        >Tech & Design by <span class="name">Tanay</span>
+                    </span>
+                </div>
+            </div>
+        </div>
         <div class="navbar">
             <div class="leftside">
                 <div class="appleicon">
@@ -52,7 +66,7 @@
                     <i class="ri-battery-2-fill"></i>
                     <p>100%</p>
                 </div>
-                <div class="datentime">
+                <div class="datetime">
                     <p class="datetime"></p>
                 </div>
             </div>
@@ -74,7 +88,7 @@
                         <i class="ri-circle-fill yellow"></i>
                         <i class="ri-circle-fill green"></i>
                     </div>
-                    <img src="/assets/music/decide.png" />
+                    <img src="/assets/music/decide.png" loading="lazy" />
                 </div>
                 <div class="infotab">
                     <div class="minutes">
@@ -108,7 +122,7 @@
                     target="_blank"
                     class="link"
                 >
-                    <img src="/assets/icons/githubicon.png"
+                    <img src="/assets/icons/githubicon.png" loading="lazy"
                 /></a>
                 <div class="appname">
                     <p>Github</p>
@@ -120,7 +134,7 @@
                     target="_blank"
                     class="link"
                 >
-                    <img src="/assets/icons/spotify.png"
+                    <img src="/assets/icons/spotify.png" loading="lazy"
                 /></a>
                 <div class="appname">
                     <p>Spotify</p>
@@ -132,49 +146,74 @@
                     target="_blank"
                     class="link"
                 >
-                    <img src="/assets/icons/linkedin.png"
+                    <img src="/assets/icons/linkedin.png" loading="lazy"
                 /></a>
                 <div class="appname">
                     <p>LinkedIn</p>
                 </div>
             </div>
             <div class="trash appicon draggable">
-                <img src="/assets/icons/trash.png" />
+                <img src="/assets/icons/trash.png" loading="lazy" />
                 <div class="appname">
                     <p>Trash</p>
                 </div>
             </div>
             <div class="txtfile appicon draggable">
-                <img src="/assets/icons/document.png" />
+                <img src="/assets/icons/document.png" loading="lazy" />
                 <div class="appname">
                     <p>about.txt</p>
                 </div>
             </div>
             <div class="photofolder appicon draggable">
-                <img src="/assets/icons/folder.png" />
+                <img src="/assets/icons/folder.png" loading="lazy" />
                 <div class="appname">
                     <p>Photos</p>
                 </div>
             </div>
             <div class="pdfile appicon draggable">
-                <img src="/assets/icons/document.png" />
+                <img src="/assets/icons/document.png" loading="lazy" />
                 <div class="appname">
                     <p>resume.pdf</p>
                 </div>
             </div>
             <div class="dupezfolder appicon draggable">
-                <img src="/assets/icons/org.png" />
+                <img src="/assets/icons/folder.png" loading="lazy" />
                 <div class="appname">
-                    <p>Projects</p>
+                    <p>(Dupez)</p>
+                </div>
+            </div>
+            <div class="iammac appicon draggable">
+                <img src="/assets/icons/folder.png" loading="lazy" />
+                <div class="appname">
+                    <p>(IamMac)</p>
                 </div>
             </div>
             <div class="notes appicon draggable">
-                <img src="/assets/icons/notes.png" />
+                <img src="/assets/icons/notes.png" loading="lazy" />
                 <div class="appname">
                     <p>Notes</p>
                 </div>
             </div>
+            <div class="appicon poster1 draggable">
+                <img src="/assets/photos/posters/poster1.png" loading="lazy" />
+                <div class="appname">
+                    <p>Swiss.png</p>
+                </div>
+            </div>
+            <div class="appicon poster2 draggable">
+                <img src="/assets/photos/posters/poster2.png" loading="lazy" />
+                <div class="appname">
+                    <p>fearless.png</p>
+                </div>
+            </div>
+            <div class="appicon poster3 draggable">
+                <img src="/assets/photos/posters/poster3.png" loading="lazy" />
+                <div class="appname">
+                    <p>white.png</p>
+                </div>
+            </div>
         </div>
         <script src="script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     </body>
 </html>
