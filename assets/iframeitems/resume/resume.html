@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>about.txt</title>
+        <style>
+            /* General Reset */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                    Roboto, Helvetica, Arial, sans-serif;
+                background: #e0e0e0;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* Topbar Styling */
+            .topbar {
+                height: 28px;
+                width: 100%;
+                background: linear-gradient(to bottom, #e6e6e6, #d4d4d4);
+                border-bottom: 1px solid #ccc;
+                display: flex;
+                align-items: center;
+                padding: 0 10px;
+                position: relative;
+            }
+
+            /* Window Buttons */
+            .window-buttons {
+                display: flex;
+                gap: 8px;
+                padding-left: 8px;
+            }
+
+            .window-button {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                border: none;
+            }
+
+            .close {
+                background-color: #ff5f57;
+            }
+
+            .minimize {
+                background-color: #febc2e;
+            }
+
+            .maximize {
+                background-color: #28c940;
+            }
+
+            /* Title Styling */
+            .title {
+                margin: 0;
+                font-size: 13px;
+                color: #4d4d4d;
+                text-align: center;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            /* PDF Controls Bar */
+            .pdf-controls {
+                height: 44px;
+                background: #f5f5f5;
+                border-bottom: 1px solid #ddd;
+                display: flex;
+                align-items: center;
+                padding: 0 20px;
+                gap: 20px;
+            }
+
+            .control-group {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .control-button {
+                background: transparent;
+                border: none;
+                padding: 4px 8px;
+                color: #666;
+                font-size: 12px;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                cursor: default;
+            }
+
+            .control-button svg {
+                width: 16px;
+                height: 16px;
+            }
+
+            .page-control {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 12px;
+                color: #666;
+            }
+
+            .page-input {
+                width: 40px;
+                height: 22px;
+                border: 1px solid #ddd;
+                border-radius: 3px;
+                text-align: center;
+                font-size: 12px;
+            }
+
+            .zoom-control {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            /* Content Container */
+            .content-container {
+                flex: 1;
+                background: white;
+                margin: 20px;
+                border-radius: 4px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                padding: 40px;
+                overflow-y: auto;
+            }
+
+            /* Rest of the existing styles... */
+            .pdf-content {
+                max-width: 800px;
+                margin: 0 auto;
+                line-height: 1.6;
+            }
+
+            h1 {
+                font-size: 24px;
+                color: #333;
+                margin-bottom: 20px;
+                font-weight: 500;
+            }
+
+            .section {
+                margin-bottom: 30px;
+            }
+
+            .section-title {
+                font-size: 18px;
+                color: #2c2c2c;
+                margin-bottom: 15px;
+                font-weight: 500;
+            }
+
+            p {
+                font-size: 14px;
+                color: #4a4a4a;
+                margin-bottom: 15px;
+                line-height: 1.6;
+            }
+
+            .skill-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            .skill-tag {
+                background: #f5f5f5;
+                padding: 4px 12px;
+                border-radius: 15px;
+                font-size: 13px;
+                color: #666;
+            }
+
+            .contact-info {
+                display: flex;
+                gap: 20px;
+                margin-top: 20px;
+                padding: 15px;
+                background: #f8f8f8;
+                border-radius: 8px;
+            }
+
+            .contact-item {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 13px;
+                color: #666;
+            }
+            .downloadbtn {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 12px;
+                color: #666;
+            }
+            .downloadbtn button {
+                border: 0;
+                color: #666;
+                border-radius: 10px;
+            }
+            .downloadbutton {
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="topbar">
+            <p class="title">about.txt</p>
+        </div>
+
+        <div class="pdf-controls">
+            <div class="control-group">
+                <button class="control-button">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                </button>
+                <button class="control-button">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path d="M9 18l6-6-6-6" />
+                    </svg>
+                </button>
+            </div>
+            <div class="downloadbtn">
+                <a
+                    href="/assets/iframeitems/resume/resume.pdf"
+                    download
+                    class="download-button"
+                >
+                    <button class="downloadbutton" onclick="downloadpdf()">
+                        <i class="ri-file-download-fill"></i>
+                    </button>
+                </a>
+            </div>
+
+            <div class="page-control">
+                <input type="text" class="page-input" value="1" />
+                <span>of 1</span>
+            </div>
+
+            <div class="control-group">
+                <button class="control-button">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+                <button class="control-button">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+                        />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="zoom-control">
+                <button class="control-button">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path d="M20 12H4" />
+                    </svg>
+                </button>
+                <span style="font-size: 12px; color: #666">100%</span>
+                <button class="control-button">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path d="M12 4v16m8-8H4" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="content-container">
+            <iframe
+                src="/assets/iframeitems/resume/resume.pdf"
+                width="100%"
+                height="100%"
+                frameborder="0"
+            ></iframe>
+        </div>
+    </body>
+</html>

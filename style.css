@@ -1,7 +1,6 @@
 @font-face {
-    font-family: "Sf";
-    font-weight: 400;
-    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+    font-family: "SFPro";
+    src: url("/assets/SF-Pro-Display-Regular.woff");
 }
 * {
     margin: 0;
@@ -12,7 +11,7 @@ body::-webkit-scrollbar {
     display: none;
 }
 body {
-    font-family: "Sf";
+    font-family: "SfPro";
     background: url("assets/wallpapers/cherrywall.png") no-repeat center center
         fixed;
     background-size: cover;
@@ -36,7 +35,11 @@ a {
     background: rgba(0, 0, 0, 0.5);
     z-index: 200000;
 }
-
+.resume-container {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 .modal-wrapper {
     position: relative;
     width: 60%;
@@ -71,9 +74,9 @@ a {
     top: -2px;
 }
 .navbar {
-    height: 28px;
+    height: 32px;
     width: 100%;
-    background-color: rgba(248, 248, 248, 0.4);
+    background-color: rgba(248, 248, 248, 0.2);
     display: flex;
     gap: 10px;
     font-size: 15px;
@@ -82,9 +85,15 @@ a {
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    font-weight: 800;
+}
+.navbar img {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 .leftside {
     display: flex;
@@ -93,8 +102,20 @@ a {
     justify-content: center;
     height: 100%;
 }
+
 .leftside > *:nth-child(n) {
     cursor: pointer;
+}
+
+.current {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+.battery {
+    display: flex;
+    gap: 2px;
 }
 .rightside {
     display: flex;
@@ -102,15 +123,10 @@ a {
     align-items: center;
     justify-content: center;
     height: 100%;
+    text-align: center;
 }
 .rightside > *:nth-child(n) {
     cursor: pointer;
-}
-.battery {
-    display: flex;
-    gap: 5px;
-    justify-content: center;
-    align-items: center;
 }
 .maincontainer {
     min-height: 100vh;
@@ -138,9 +154,9 @@ a {
     right: 30px;
     display: grid;
     border-radius: 10px;
-    background: rgba(248, 248, 248, 0.4);
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(248, 248, 248, 0.2);
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     grid-template-rows: 3fr 1fr;
@@ -165,19 +181,6 @@ a {
     background: #525253;
     border-radius: 4px; /* Match the container's rounded corners */
     position: relative;
-}
-
-/* Knob/Handle for progress */
-.progress-handle {
-    width: 5px; /* Width of the knob */
-    height: 16px; /* Height of the knob */
-    background: #525253; /* White knob */
-    border: 2px solid #525253; /* Black border */
-    border-radius: 20%; /* Rounded knob */
-    position: absolute;
-    right: 0; /* Positioned at the end of the progress bar */
-    top: 50%;
-    transform: translate(50%, -50%); /* Center the knob vertically */
 }
 
 .albumcover {
@@ -248,41 +251,35 @@ a {
     text-align: center;
 }
 .appicon {
-    display: grid;
-    grid-template-rows: auto auto;
-    height: 90px;
-    width: 100px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100px; /* Consistent width */
     text-align: center;
-    gap: 1px;
+    gap: 8px; /* Consistent gap between icon and text */
+    padding: 10px; /* Add some padding for breathing room */
 }
 
 .appicon img {
-    height: 75px;
-    width: 75px;
-    margin: 0;
-    align-items: center;
-    justify-content: center;
+    height: 64px; /* Uniform height for all icons */
+    width: 64px; /* Uniform width for all icons */
+    object-fit: contain; /* Ensures proper scaling without distortion */
+    margin-bottom: 4px; /* Small additional margin before text */
 }
 
 .appname {
     color: white;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    display: flex;
-    margin: 0; /* Remove any margin from the .appname container */
+    font-size: 14px; /* Uniform font size for app names */
+    line-height: 0.1; /* Improved readability */
+    max-width: 100%; /* Ensure text doesn't overflow */
+    word-wrap: break-word; /* Allow long names to wrap */
 }
 
 .appname p {
-    margin: 0; /* Remove any default margin around the text */
-    line-height: 0;
-    justify-content: center;
+    margin: 0;
     text-align: center;
-    align-items: center;
 }
-
 .githublink {
     position: absolute;
     bottom: 200px;
@@ -308,19 +305,23 @@ a {
     bottom: 300px;
     right: 300px;
 }
+.pdfile {
+    position: absolute;
+    bottom: 200px;
+    left: 100px;
+}
 .photofolder {
     position: absolute;
     top: 100px;
     left: 200px;
 }
-.txtfile p {
-    padding-top: 10px;
+.dupezfolder {
+    position: absolute;
+    bottom: 100px;
+    left: 600px;
 }
-.txtfile img {
-    height: 70px;
-    width: 60px;
-}
-.photofolder img {
-    width: 60px;
-    height: 60px;
+.notes {
+    position: absolute;
+    top: 300px;
+    left: 400px;
 }

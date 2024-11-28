@@ -185,7 +185,32 @@ document
     loadIframeContent("/assets/iframeitems/photos/photos.html");
   });
 
+// For opening resume pdf
+document.querySelector(".pdfile").addEventListener("dblclick", function () {
+  loadIframeContent("/assets/iframeitems/resume/resume.html");
+});
+
+// For opening resume pdf
+document.querySelector(".notes").addEventListener("dblclick", function () {
+  loadIframeContent("/assets/iframeitems/notes/notes.html");
+});
+
 // for opening the projects files
+document
+  .querySelector(".dupezfolder")
+  .addEventListener("dblclick", function () {
+    loadIframeContent("https://tanaybhomia.github.io/MockWebsites/");
+    const modalwrapper = document.querySelector(".modal-wrapper");
+    modalwrapper.style.width = "90%";
+    modalwrapper.style.height = "90%";
+  });
+
+document.querySelector(".iammac").addEventListener("dblclick", function () {
+  loadIframeContent("https://tanaybhomia.github.io/MockWebsites/");
+  const modalwrapper = document.querySelector(".modal-wrapper");
+  modalwrapper.style.width = "90%";
+  modalwrapper.style.height = "90%";
+});
 
 // Your existing loadIframeContent function should remain the same
 function loadIframeContent(url) {
@@ -198,4 +223,7 @@ function closeIframe() {
   const iframe = document.getElementById("contentFrame");
   iframe.src = "";
   container.style.display = "none";
+  const modalwrapper = document.querySelector(".modal-wrapper");
+  modalwrapper.style.width = "60%";
+  modalwrapper.style.height = "60%";
 }
