@@ -416,3 +416,8 @@ a {
 .poster {
     gap: 8px;
 }
+.harmony {
+    position: absolute;
+    top: 220px;
+    left: 250px;
+}
