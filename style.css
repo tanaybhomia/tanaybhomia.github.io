@@ -421,3 +421,171 @@ a {
     top: 220px;
     left: 250px;
 }
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    body {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .navbar {
+        height: 40px;
+        font-size: 12px;
+        padding: 0 5px;
+    }
+
+    .leftside {
+        gap: 10px;
+    }
+
+    .rightside {
+        gap: 10px;
+    }
+
+    .maincontainer {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .draggable {
+        position: static;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+
+    .appicon {
+        width: 70px;
+        transform: none !important;
+        opacity: 1 !important;
+        position: static !important;
+        margin: 10px;
+    }
+
+    .appicon img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .appname {
+        font-size: 12px;
+    }
+
+    .musicplayer {
+        width: 90%;
+        max-width: 280px;
+        position: fixed;
+        left: 60%;
+        top: 10%;
+        transform: translateX(-50%) !important;
+        z-index: 1000;
+        opacity: 1 !important;
+    }
+
+    #mac-loader {
+        backdrop-filter: blur(20px);
+    }
+
+    .welcome-txt {
+        font-size: 18px;
+    }
+
+    .iframeContainer .modal-wrapper {
+        width: 95%;
+        height: 70%;
+    }
+
+    /* Specific icon positioning */
+    .githublink {
+        bottom: 50px;
+        left: 50px;
+    }
+    .spotifylink {
+        bottom: 150px;
+        right: 50px;
+    }
+    .linkedlink {
+        top: 200px;
+        left: 50px;
+    }
+    .trash {
+        bottom: 50px;
+        right: 50px;
+    }
+    .txtfile {
+        bottom: 200px;
+        right: 150px;
+    }
+    .pdfile {
+        bottom: 100px;
+        left: 50px;
+    }
+    .photofolder {
+        top: 50px;
+        left: 100px;
+    }
+    .dupezfolder {
+        bottom: 50px;
+        left: 300px;
+    }
+    .iammac {
+        bottom: 80px;
+        right: 300px;
+    }
+    .notes {
+        top: 200px;
+        left: 200px;
+    }
+    .poster1 {
+        top: 250px;
+        left: 50px;
+    }
+    .poster2 {
+        top: 350px;
+        left: 150px;
+    }
+    .poster3 {
+        top: 450px;
+        left: 50px;
+    }
+    .harmony {
+        top: 150px;
+        left: 100px;
+    }
+}
+
+/* Smaller mobile devices */
+@media screen and (max-width: 480px) {
+    .appicon {
+        width: 60px;
+        margin: 5px;
+    }
+
+    .appicon img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .appname {
+        font-size: 10px;
+    }
+
+    .navbar {
+        font-size: 10px;
+    }
+
+    .musicplayer {
+        width: 90%;
+        max-width: 350px;
+        position: fixed;
+        left: 50%;
+        top: 40%;
+        transform: translateX(-50%) !important;
+        z-index: 1000;
+        opacity: 1 !important;
+    }
+
+    .welcome-txt {
+        font-size: 16px;
+    }
+}
