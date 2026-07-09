@@ -15,15 +15,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Check for saved theme preference, otherwise use system preference
     const savedTheme = localStorage.getItem("theme");
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     
     if (savedTheme) {
         htmlElement.setAttribute("data-theme", savedTheme);
         updateIcon(savedTheme);
     } else {
         // If no saved theme, check system preference to set initial icon
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        updateIcon(prefersDark ? "dark" : "light");
+        updateIcon(mediaQuery.matches ? "dark" : "light");
     }
+
+    // Listen for OS theme changes to update the icon automatically
+    mediaQuery.addEventListener("change", (e) => {
+        if (!localStorage.getItem("theme")) {
+            updateIcon(e.matches ? "dark" : "light");
+        }
+    });
 
     if(themeToggle) {
         themeToggle.addEventListener("click", () => {
@@ -31,13 +38,22 @@ document.addEventListener("DOMContentLoaded", () => {
             
             if (!currentTheme) {
                 // If not explicitly set, determine based on OS preference
-                const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                currentTheme = prefersDark ? "dark" : "light";
+                currentTheme = mediaQuery.matches ? "dark" : "light";
             }
             
             const newTheme = currentTheme === "dark" ? "light" : "dark";
-            htmlElement.setAttribute("data-theme", newTheme);
-            localStorage.setItem("theme", newTheme);
+            const osTheme = mediaQuery.matches ? "dark" : "light";
+
+            // If the user toggles back to the current OS theme, clear the override
+            // so the website can follow automatic OS changes again.
+            if (newTheme === osTheme) {
+                htmlElement.removeAttribute("data-theme");
+                localStorage.removeItem("theme");
+            } else {
+                htmlElement.setAttribute("data-theme", newTheme);
+                localStorage.setItem("theme", newTheme);
+            }
+            
             updateIcon(newTheme);
         });
     }
