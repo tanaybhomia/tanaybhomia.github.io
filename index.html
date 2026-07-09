@@ -1,236 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>T A N A Y</title>
-        <link rel="icon" href="/assets/icons/avatar.png" type="image/x-icon" />
-        <link rel="stylesheet" href="/style.css" />
-        <link
-            href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-            rel="stylesheet"
-        />
-    </head>
-    <body>
-        <div id="mac-loader">
-            <div class="loader-container">
-                <div class="apple-logo">
-                    <img src="/assets/icons/avatar.png" />
-                </div>
-                <div class="loader-spinner">
-                    <div class="spinner-dot"></div>
-                    <div class="spinner-dot"></div>
-                    <div class="spinner-dot"></div>
-                </div>
-                <div class="loading-text">
-                    <span class="welcome-txt"
-                        >Tech & Design by <span class="name">Tanay</span> </span
-                    ><br />
-                    <span class="welcome-txt">Works best on desktops</span>
-                </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanay Bhomia</title>
+    <link rel="icon" href="/assets/pfp2.png?v=2" type="image/png">
+    <link rel="apple-touch-icon" href="/assets/pfp2.png?v=2">
+    <meta property="og:title" content="Tanay Bhomia">
+    <meta property="og:description" content="Developer and designer. Welcome to my personal space on the web.">
+    <meta property="og:image" content="/assets/pfp2.png?v=2">
+    <link href="https://cdn.jsdelivr.net/npm/@fontsource/adwaita-sans@5.0.18/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+            <span id="theme-icon"></span>
+        </button>
+        <header class="profile">
+            <div class="avatar-container">
+                <img src="/assets/pfp2.png" alt="Tanay Bhomia" class="avatar">
             </div>
-        </div>
-        <div class="navbar">
-            <div class="leftside">
-                <div class="appleicon">
-                    <i class="ri-apple-fill"></i>
-                </div>
-                <div class="finder">
-                    <p>Finder</p>
-                </div>
-                <div class="file">
-                    <p>File</p>
-                </div>
-                <div class="edit">
-                    <p>Edit</p>
-                </div>
-                <div class="view">
-                    <p>View</p>
-                </div>
-                <div class="go">
-                    <p>Go</p>
-                </div>
-                <div class="window">
-                    <p>Window</p>
-                </div>
-                <div class="help">
-                    <p>Help</p>
-                </div>
-            </div>
-            <div class="rightside">
-                <div class="volume">
-                    <i class="ri-volume-up-line"></i>
-                </div>
-                <div class="bluetooth">
-                    <i class="ri-bluetooth-line"></i>
-                </div>
-                <div class="wifi">
-                    <i class="ri-wifi-line"></i>
-                </div>
-                <div class="battery">
-                    <i class="ri-battery-2-fill"></i>
-                    <p>100%</p>
-                </div>
-                <div class="datetime">
-                    <p class="datetime"></p>
-                </div>
-            </div>
-        </div>
-        <div class="maincontainer">
-            <div class="iframeContainer">
-                <div class="modal-wrapper">
-                    <iframe id="contentFrame" src="" frameborder="0"></iframe>
-                    <button
-                        class="iframe-close"
-                        onclick="closeIframe()"
-                    ></button>
-                </div>
-            </div>
-            <div class="musicplayer draggable">
-                <div draggable="true" class="albumcover">
-                    <div class="windowbuttons">
-                        <i class="ri-circle-fill red"></i>
-                        <i class="ri-circle-fill yellow"></i>
-                        <i class="ri-circle-fill green"></i>
+            <h1>Tanay Bhomia</h1>
+            <p class="bio">
+                Hi, I'm Tanay! I am a developer and designer. Welcome to my personal space on the web.
+            </p>
+            <p class="bio">
+                I love building software that is accessible, intuitive, and beautiful. Most of my development and design efforts are centered around creating impactful user experiences.
+            </p>
+            <p class="bio" style="margin-top: 24px;">
+                Feel free to <a href="https://matrix.to/#/@tanaybhomia:matrix.org" target="_blank" class="inline-link">contact me on Matrix</a>. 
+                If you'd like to support my work, you can make a <a href="/donate.html" class="inline-link">donation</a>. I'd really appreciate that!
+            </p>
+        </header>
+
+        <section class="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <a href="https://tanaybhomia.github.io/Whisp/" target="_blank" class="card-main-link"></a>
+                    <div class="project-icon" style="background-color: transparent;">
+                        <img src="/assets/io.github.tanaybhomia.Whisp.svg" alt="Whisp Icon" style="width: 100%; height: 100%; object-fit: contain; border-radius: 16px;">
                     </div>
-                    <img src="/assets/music/decide.png" loading="lazy" />
+                    <h3>Whisp</h3>
+                    <p>the anti-note for gnome</p>
+                    <a href="https://flathub.org/apps/io.github.tanaybhomia.Whisp" target="_blank" class="flathub-link">
+                        <img src="https://dl.flathub.org/assets/badges/flathub-badge-en.svg" alt="Get it on Flathub" style="height: 48px; width: auto; object-fit: contain;" />
+                    </a>
                 </div>
-                <div class="infotab">
-                    <div class="minutes">
-                        <p>0:51</p>
-                        <p class="songname">Decide | DJO</p>
-                        <p>- 3:36</p>
+
+                <div class="project-card under-construction">
+                    <div class="construction-badge">Under Construction</div>
+                    <a href="https://github.com/tanaybhomia/Plumb" target="_blank" class="card-main-link"></a>
+                    <div class="project-icon" style="background-color: #fb8500;">
+                        <span style="font-size: 56px;">🍅</span>
                     </div>
-                    <div class="progressbar">
-                        <div class="progress-container">
-                            <div class="progress-bar"></div>
-                        </div>
-                    </div>
-                    <div class="buttons">
-                        <div class="volume">
-                            <i class="ri-volume-up-line"></i>
-                        </div>
-                        <div class="actualbtns">
-                            <i class="ri-skip-back-fill"></i>
-                            <i class="ri-play-large-fill"></i>
-                            <i class="ri-skip-forward-fill"></i>
-                        </div>
-                        <div class="lyrics">
-                            <i class="ri-play-list-line"></i>
-                        </div>
-                    </div>
+                    <h3>Plumb</h3>
+                    <p>Pomodoro App & UI Architecture</p>
+                    <a href="https://flathub.org/apps/search?q=Plumb" target="_blank" class="flathub-link">
+                        <img src="https://dl.flathub.org/assets/badges/flathub-badge-en.svg" alt="Get it on Flathub" style="height: 48px; width: auto; object-fit: contain;" />
+                    </a>
                 </div>
             </div>
-            <div class="githublink appicon draggable">
-                <a
-                    href="https://github.com/tanaybhomia"
-                    target="_blank"
-                    class="link"
-                >
-                    <img src="/assets/icons/githubicon.png" loading="lazy"
-                /></a>
-                <div class="appname">
-                    <p>Github</p>
-                </div>
-            </div>
-            <div class="spotifylink appicon draggable">
-                <a
-                    href="https://open.spotify.com/user/31e2rxu3vop2dutbdwjp6arrme2a?si=f0b7cf9d1f4e4261"
-                    target="_blank"
-                    class="link"
-                >
-                    <img src="/assets/icons/spotify.png" loading="lazy"
-                /></a>
-                <div class="appname">
-                    <p>Spotify</p>
-                </div>
-            </div>
-            <div class="linkedlink appicon draggable">
-                <a
-                    href="https://www.linkedin.com/in/tanay-bhomia-1b986414b/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BU1C0Z2j%2BQjGVUZjzH0Bu0A%3D%3D"
-                    target="_blank"
-                    class="link"
-                >
-                    <img src="/assets/icons/linkedin.png" loading="lazy"
-                /></a>
-                <div class="appname">
-                    <p>LinkedIn</p>
-                </div>
-            </div>
-            <div class="trash appicon draggable">
-                <img src="/assets/icons/trash.png" loading="lazy" />
-                <div class="appname">
-                    <p>Trash</p>
-                </div>
-            </div>
-            <div class="txtfile appicon draggable">
-                <img src="/assets/icons/document.png" loading="lazy" />
-                <div class="appname">
-                    <p>about.txt</p>
-                </div>
-            </div>
-            <div class="photofolder appicon draggable">
-                <img src="/assets/icons/folder.png" loading="lazy" />
-                <div class="appname">
-                    <p>Photos</p>
-                </div>
-            </div>
-            <div class="pdfile appicon draggable">
-                <img src="/assets/icons/document.png" loading="lazy" />
-                <div class="appname">
-                    <p>resume.pdf</p>
-                </div>
-            </div>
-            <div class="dupezfolder appicon draggable">
-                <img src="/assets/icons/folder.png" loading="lazy" />
-                <div class="appname">
-                    <p>(Dupez)</p>
-                </div>
-            </div>
-            <div class="iammac appicon draggable">
-                <img src="/assets/icons/folder.png" loading="lazy" />
-                <div class="appname">
-                    <p>(IamMac)</p>
-                </div>
-            </div>
-            <div class="notes appicon draggable">
-                <img src="/assets/icons/notes.png" loading="lazy" />
-                <div class="appname">
-                    <p>Notes</p>
-                </div>
-            </div>
-            <div class="appicon poster1 draggable poster">
-                <img src="/assets/photos/posters/poster1.png" loading="lazy" />
-                <div class="appname">
-                    <p>Swiss.png</p>
-                </div>
-            </div>
-            <div class="appicon poster2 draggable poster">
-                <img src="/assets/photos/posters/poster2.png" loading="lazy" />
-                <div class="appname">
-                    <p>fearless.png</p>
-                </div>
-            </div>
-            <div class="appicon poster3 draggable poster">
-                <img src="/assets/photos/posters/poster3.png" loading="lazy" />
-                <div class="appname">
-                    <p>white.png</p>
-                </div>
-            </div>
-            <div class="harmony appicon draggable">
-                <a
-                    href="https://github.com/tanaybhomia/Harmony?tab=readme-ov-file"
-                    target="_blank"
-                    class="link"
-                >
-                    <img src="/assets/icons/folder.png" loading="lazy"
-                /></a>
-                <div class="appname">
-                    <p>Harmony</p>
-                </div>
-            </div>
-        </div>
-        <script src="script.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    </body>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>
