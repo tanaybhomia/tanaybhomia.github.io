@@ -57,4 +57,49 @@ document.addEventListener("DOMContentLoaded", () => {
             updateIcon(newTheme);
         });
     }
+
+    // Lightbox logic
+    const masonryItems = document.querySelectorAll('.masonry-item img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxDownload = document.getElementById('lightbox-download');
+
+    if (lightbox) {
+        masonryItems.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                
+                // Get filename for download
+                const filename = img.src.split('/').pop();
+                lightboxDownload.href = img.src;
+                lightboxDownload.setAttribute('download', filename);
+
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            });
+        });
+
+        // Close on click close button
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close on click outside image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target === lightbox.querySelector('.lightbox-content')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close on Esc key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
 });
