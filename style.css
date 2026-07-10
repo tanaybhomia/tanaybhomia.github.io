@@ -69,6 +69,12 @@ body {
     padding: 80px 24px;
 }
 
+.gallery-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 24px;
+}
+
 @keyframes fadeSlideUp {
     from {
         opacity: 0;
@@ -136,7 +142,7 @@ h1 {
         grid-template-columns: 1fr;
     }
     .masonry-grid {
-        column-count: 1;
+        column-count: 1 !important;
     }
 }
 
@@ -292,17 +298,25 @@ h1 {
 
 /* Gallery Masonry */
 .masonry-grid {
-    column-count: 2;
+    column-count: 4;
     column-gap: 16px;
+}
+
+@media (max-width: 1024px) {
+    .masonry-grid {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 768px) {
+    .masonry-grid {
+        column-count: 2;
+    }
 }
 
 .masonry-item {
     break-inside: avoid;
     margin-bottom: 16px;
-    border-radius: 16px;
-    overflow: hidden;
-    background-color: var(--card-bg);
-    border: 1px solid var(--card-border);
 }
 
 .masonry-item img {
