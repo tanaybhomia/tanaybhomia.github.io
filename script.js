@@ -68,11 +68,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (lightbox) {
         masonryItems.forEach(img => {
             img.addEventListener('click', () => {
-                lightboxImg.src = img.src;
+                const fullSrc = img.getAttribute('data-full') || img.src;
+                lightboxImg.src = fullSrc;
                 
                 // Get filename for download
-                const filename = img.src.split('/').pop();
-                lightboxDownload.href = img.src;
+                const filename = fullSrc.split('/').pop();
+                lightboxDownload.href = fullSrc;
                 lightboxDownload.setAttribute('download', filename);
 
                 lightbox.classList.add('active');
