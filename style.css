@@ -134,6 +134,9 @@ h1 {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+    .masonry-grid {
+        column-count: 1;
+    }
 }
 
 .project-card {
@@ -284,6 +287,27 @@ h1 {
 
 .heading-link:hover .heading-icon {
     color: var(--text-color);
+}
+
+/* Gallery Masonry */
+.masonry-grid {
+    column-count: 2;
+    column-gap: 16px;
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+}
+
+.masonry-item img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 
